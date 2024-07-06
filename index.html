@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="website icon" type="png" href="images/Temperature-PNG.png" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <h2>Temperature Converter</h2>
+      <div class="inputdiv">
+        <input type="number" id="input" placeholder="enter the temperature" />
+      </div>
+      <div>
+        <button type="submit" onclick="celcius()">farenheit to celcius</button>
+      </div>
+      <div>
+        <button type="submit" onclick="farenheit()">celcius to farenheit</button>
+      </div>
+
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function celcius() {
+        const cel = parseFloat(document.getElementById("input").value);
+        const cof = cel * 1.8 + 32;
+        const resultElement = document.getElementById("result");
+        resultElement.innerHTML = cof + " Fahrenheit";
+      }
+
+      function farenheit() {
+        const faren = parseFloat(document.getElementById("input").value);
+        const foc = (faren - 32) / 1.8;
+        const resultElement = document.getElementById("result");
+        resultElement.innerHTML = foc + " Celsius";
+      }
+    </script>
+  </body>
+</html>
